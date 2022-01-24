@@ -1,0 +1,32 @@
+.board {
+    display: grid;
+    margin: 12% 24%;
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+
+    span {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        font-size: 4.2vh;
+        border: 2px solid #154c79;
+        color: #154c79;
+
+        &[data-result="correct"] {
+            background: #00cc00;
+            border-color: #00ff00;
+            color: #fff;
+        }
+
+        &[data-result="place"] {
+            background: #ffd800;
+            border-color: #ffff00;
+            color: #1e1900;
+        }
+    }
+}

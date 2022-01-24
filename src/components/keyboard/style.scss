@@ -1,0 +1,26 @@
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0.2em;
+    grid-row-gap: 0.3em;
+    margin: auto 1% 2% 1%;
+    padding: 4px 8px;
+    font-size: 1.5em;
+
+    button {
+        grid-column: span 2;
+
+        // Move letter 'A' one over to match the layout of modern keyboards.
+        &:nth-child(11) {
+            grid-column: 2 / span 2;
+        }
+
+        // Move letter 'A' one over to match the layout of modern keyboards.
+        &:nth-child(20),
+        &:nth-child(28) {
+            grid-column: span 3;
+            font-weight: 900;
+        }
+    }
+}

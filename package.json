@@ -1,0 +1,29 @@
+{
+    "name": "wfd",
+    "version": "0.1.0",
+    "description": "Wordle for Developers",
+    "repository": "git@github.com:dsluijk/wfd.git",
+    "author": "Dany Sluijk <me@dany.dev>",
+    "license": "MIT",
+    "private": true,
+    "type": "module",
+    "sideEffects": [
+        "./src/index.tsx"
+    ],
+    "scripts": {
+        "start": "parcel -p 8000 ./src/index.html",
+        "build": "yarn clear-cache && parcel build ./src/index.html",
+        "serve": "yarn build && http-server ./dist -p 8000 -g -b",
+        "clear-cache": "rm -rf dist .parcel-cache parcel-bundle-reports"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.2.1",
+        "autoprefixer": "^10.4.2",
+        "http-server": "^14.1.0",
+        "parcel": "^2.2.1",
+        "postcss": "^8.1.0"
+    },
+    "dependencies": {
+        "preact": "^10.6.4"
+    }
+}

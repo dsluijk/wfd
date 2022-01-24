@@ -1,0 +1,16 @@
+.key {
+    background: none;
+    height: 48px;
+    border: 1px solid #154c79;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    overflow: hidden;
+
+    &:hover,
+    &:active {
+        cursor: pointer;
+        background: #154c79;
+        color: #fafafa;
+    }
+}
