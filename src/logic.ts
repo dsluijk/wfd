@@ -26,25 +26,25 @@ export const handleInput = (c: string, state: State): State => {
     }
 
     if (state.board[attempt].length >= 3) return state;
-    state.board[attempt] += c.toUpperCase();
+    state.board[attempt] += c.toLowerCase();
 
     return state;
 };
 
 const handleEnter = (attempt: number, state: State): State => {
     if (state.board[attempt].length !== 3) return state;
-    if (!words.includes(state.board[attempt])) {
+    if (!words.find((word: Word) => word.abbr === state.board[attempt])) {
         alert("This word is not known!");
         return state;
     }
 
     state.submitted[attempt] = true;
-    if (state.board[attempt] === state.solution) {
+    if (state.board[attempt] === state.solution.abbr) {
         alert("congrats!");
         state.streak++;
         state.stats[attempt]++;
         state.state = GameState.Success;
-    } else if (attempt === 5) {
+    } else if (attempt + 1 === 8) {
         alert("too bad :(");
         state.streak = 0;
         state.state = GameState.Failed;
@@ -64,18 +64,18 @@ export const getLetterResult = (
     attempt: number,
     state: State,
 ): LetterResult[] => {
-    let result = [
-        LetterResult.Unknown,
-        LetterResult.Unknown,
-        LetterResult.Unknown,
-    ];
-
     if (!state.submitted[attempt]) {
-        return result;
+        return [
+            LetterResult.Unknown,
+            LetterResult.Unknown,
+            LetterResult.Unknown,
+        ];
     }
 
+    let result = [LetterResult.Wrong, LetterResult.Wrong, LetterResult.Wrong];
+
     for (let i = 0; i < 3; i++) {
-        if (state.board[attempt][i] === state.solution[i]) {
+        if (state.board[attempt][i] === state.solution.abbr[i]) {
             result[i] = LetterResult.Correct;
         }
     }
@@ -83,7 +83,7 @@ export const getLetterResult = (
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             if (result[i] === LetterResult.Correct) continue;
-            if (state.solution[i] === state.board[attempt][j]) {
+            if (state.solution.abbr[i] === state.board[attempt][j]) {
                 result[j] = LetterResult.Place;
             }
         }
@@ -102,14 +102,14 @@ const newDay = (state: State) => {
     state.day = getDay();
     state.state = GameState.InProgress;
     state.solution = pickSolution(day);
-    state.board = ["", "", "", "", "", ""];
-    state.submitted = [false, false, false, false, false, false];
+    state.board = ["", "", "", "", "", "", "", ""];
+    state.submitted = [false, false, false, false, false, false, false, false];
 };
 
-const pickSolution = (day: number): string => {
+const pickSolution = (day: number): Word => {
     // Generate a pseudo-random enough number;
     const i = (day + 100 * 2375942345) % words.length;
-    return words[i].toUpperCase();
+    return words[i];
 };
 
 // Get the day we are playing with.
@@ -128,7 +128,28 @@ const getDay = (): number => {
 };
 
 const loadState = (): State => {
-    return JSON.parse(localStorage.getItem("wfdstate")) || getDefault();
+    return migrate(
+        JSON.parse(localStorage.getItem("wfdstate")) || getDefault(),
+    );
+};
+
+const migrate = (state: State): State => {
+    switch (state.version) {
+        case undefined:
+            state.version = 1;
+        case 1:
+            state.board.push("");
+            state.board.push("");
+            state.submitted.push(false);
+            state.submitted.push(false);
+            state.stats.push(0);
+            state.stats.push(0);
+            newDay(state);
+    }
+
+    state.version = 2;
+
+    return state;
 };
 
 export const saveState = (state: State) => {
@@ -142,23 +163,34 @@ export const getDefault = (): State => {
     const day = getDay();
 
     return {
+        version: 2,
         state: GameState.InProgress,
         streak: 0,
         solution: pickSolution(day),
-        board: ["", "", "", "", "", ""],
-        submitted: [false, false, false, false, false, false],
+        board: ["", "", "", "", "", "", "", ""],
+        submitted: [false, false, false, false, false, false, false, false],
         stats: [0, 0, 0, 0, 0, 0],
         day,
     };
 };
 
 export interface State {
+    version?: number;
     day: number;
     state: GameState;
     streak: number;
-    solution: string;
-    board: [string, string, string, string, string, string];
-    submitted: [boolean, boolean, boolean, boolean, boolean, boolean];
+    solution: Word;
+    board: [string, string, string, string, string, string, string, string];
+    submitted: [
+        boolean,
+        boolean,
+        boolean,
+        boolean,
+        boolean,
+        boolean,
+        boolean,
+        boolean,
+    ];
     stats: [number, number, number, number, number, number];
 }
 
@@ -171,5 +203,6 @@ export enum GameState {
 export enum LetterResult {
     Correct = "correct",
     Place = "place",
+    Wrong = "wrong",
     Unknown = "",
 }

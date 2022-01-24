@@ -1,64 +1,754 @@
 [
-    "ALU",
-    "AMD",
-    "BCD",
-    "CAD",
-    "CNC",
-    "CAN",
-    "CLI",
-    "TUI",
-    "GUI",
-    "CPU",
-    "GPU",
-    "MMU",
-    "CRT",
-    "K8S",
-    "DMA",
-    "DNS",
-    "DSN",
-    "DVD",
-    "FAT",
-    "FTP",
-    "POP",
-    "GHZ",
-    "MHZ",
-    "KHZ",
-    "GSM",
-    "GPS",
-    "GNU",
-    "ISP",
-    "STP",
-    "JRE",
-    "JDK",
-    "LAN",
-    "WAN",
-    "LCD",
-    "IPS",
-    "LED",
-    "MBR",
-    "MVC",
-    "OCR",
-    "OSI",
-    "OSS",
-    "PDF",
-    "CSS",
-    "PHP",
-    "PIP",
-    "QOS",
-    "RAM",
-    "ROM",
-    "SQL",
-    "TCP",
-    "UDP",
-    "URL",
-    "URI",
-    "USB",
-    "VGA",
-    "XML",
-    "NAT",
-    "NIC",
-    "YML",
-    "PNG",
-    "JPG",
-    "GPT"
+    {
+        "abbr": "yml",
+        "meaning": "yet another markup language"
+    },
+    {
+        "abbr": "png",
+        "meaning": "portable network graphics"
+    },
+    {
+        "abbr": "jpg",
+        "meaning": "joint photographic [expert] group"
+    },
+    {
+        "abbr": "pyc",
+        "meaning": "python compiled"
+    },
+    {
+        "abbr": "gpt",
+        "meaning": "GUID partition table"
+    },
+    {
+        "abbr": "cap",
+        "meaning": "capability"
+    },
+    {
+        "abbr": "bmp",
+        "meaning": "bitmap"
+    },
+    {
+        "abbr": "gcc",
+        "meaning": "GNU compiler collection"
+    },
+    {
+        "abbr": "cat",
+        "meaning": "concatenate"
+    },
+    {
+        "abbr": "man",
+        "meaning": "manual"
+    },
+    {
+        "abbr": "vim",
+        "meaning": "vi improved"
+    },
+    {
+        "abbr": "asm",
+        "meaning": "assembly"
+    },
+    {
+        "abbr": "sha",
+        "meaning": "secure hashing algorithm"
+    },
+    {
+        "abbr": "gpg",
+        "meaning": "gnu pgp"
+    },
+    {
+        "abbr": "pgp",
+        "meaning": "pretty good privacy"
+    },
+    {
+        "abbr": "ftp",
+        "meaning": "file transfer protocol"
+    },
+    {
+        "abbr": "ssh",
+        "meaning": "secure shell"
+    },
+    {
+        "abbr": "zsh",
+        "meaning": "z shell"
+    },
+    {
+        "abbr": "exs",
+        "meaning": "elixir script"
+    },
+    {
+        "abbr": "poc",
+        "meaning": "proof of concept"
+    },
+    {
+        "abbr": "mvp",
+        "meaning": "minimal viable product"
+    },
+    {
+        "abbr": "cmd",
+        "meaning": "command"
+    },
+    {
+        "abbr": "tty",
+        "meaning": "teletype (pronounced like titty)"
+    },
+    {
+        "abbr": "eth",
+        "meaning": "ethernet"
+    },
+    {
+        "abbr": "wlo",
+        "meaning": "wireless onboard"
+    },
+    {
+        "abbr": "enp",
+        "meaning": "ethernet network port"
+    },
+    {
+        "abbr": "alu",
+        "meaning": "arithmetic and logic unit"
+    },
+    {
+        "abbr": "fat",
+        "meaning": "file allocation table"
+    },
+    {
+        "abbr": "amd",
+        "meaning": "advanced micro devices"
+    },
+    {
+        "abbr": "bcd",
+        "meaning": "binary coded decimal"
+    },
+    {
+        "abbr": "rce",
+        "meaning": "remote code execution"
+    },
+    {
+        "abbr": "ctf",
+        "meaning": "capture the flag"
+    },
+    {
+        "abbr": "tls",
+        "meaning": "transport layer security"
+    },
+    {
+        "abbr": "cve",
+        "meaning": "common vulnerabilities and exposures"
+    },
+    {
+        "abbr": "can",
+        "meaning": "controller area network"
+    },
+    {
+        "abbr": "pdf",
+        "meaning": "portable document format"
+    },
+    {
+        "abbr": "mmu",
+        "meaning": "memory management unit"
+    },
+    {
+        "abbr": "crt",
+        "meaning": "cathode ray tube"
+    },
+    {
+        "abbr": "dma",
+        "meaning": "direct memory access"
+    },
+    {
+        "abbr": "dns",
+        "meaning": "domain name system"
+    },
+    {
+        "abbr": "dvd",
+        "meaning": "digital video disk"
+    },
+    {
+        "abbr": "cpu",
+        "meaning": "central processing unit"
+    },
+    {
+        "abbr": "bfs",
+        "meaning": "breadth first search"
+    },
+    {
+        "abbr": "dfs",
+        "meaning": "depth first search"
+    },
+    {
+        "abbr": "lcd",
+        "meaning": "liquid crystal display"
+    },
+    {
+        "abbr": "wan",
+        "meaning": "wide area network"
+    },
+    {
+        "abbr": "lan",
+        "meaning": "local area network"
+    },
+    {
+        "abbr": "pip",
+        "meaning": "preferred installer program; python"
+    },
+    {
+        "abbr": "qos",
+        "meaning": "quality of service"
+    },
+    {
+        "abbr": "ram",
+        "meaning": "random access memory"
+    },
+    {
+        "abbr": "rom",
+        "meaning": "read only memory"
+    },
+    {
+        "abbr": "nat",
+        "meaning": "network address translation"
+    },
+    {
+        "abbr": "usb",
+        "meaning": "universal serial bus"
+    },
+    {
+        "abbr": "uri",
+        "meaning": "universal resource identifier"
+    },
+    {
+        "abbr": "tcp",
+        "meaning": "transmission control protocol"
+    },
+    {
+        "abbr": "udp",
+        "meaning": "user datagram protocol"
+    },
+    {
+        "abbr": "php",
+        "meaning": "php hypertext preprocessor"
+    },
+    {
+        "abbr": "css",
+        "meaning": "cascade style sheet"
+    },
+    {
+        "abbr": "jdk",
+        "meaning": "java development kit"
+    },
+    {
+        "abbr": "jre",
+        "meaning": "java runtime environment"
+    },
+    {
+        "abbr": "cli",
+        "meaning": "command line interface"
+    },
+    {
+        "abbr": "tui",
+        "meaning": "terminal user interface"
+    },
+    {
+        "abbr": "gui",
+        "meaning": "graphical user interface"
+    },
+    {
+        "abbr": "oss",
+        "meaning": "open source software"
+    },
+    {
+        "abbr": "bgp",
+        "meaning": "border gateway protocol"
+    },
+    {
+        "abbr": "gan",
+        "meaning": "generative adversarial network"
+    },
+    {
+        "abbr": "cfg",
+        "meaning": "config or context free grammar"
+    },
+    {
+        "abbr": "nfa",
+        "meaning": "nondeterministic finite-state automata"
+    },
+    {
+        "abbr": "dos",
+        "meaning": "disk operating system"
+    },
+    {
+        "abbr": "dfa",
+        "meaning": "deterministic finite-state automata"
+    },
+    {
+        "abbr": "fsa",
+        "meaning": "finite state automata"
+    },
+    {
+        "abbr": "dll",
+        "meaning": "dynamically linkable library"
+    },
+    {
+        "abbr": "exe",
+        "meaning": "executable"
+    },
+    {
+        "abbr": "bin",
+        "meaning": "binary"
+    },
+    {
+        "abbr": "ghc",
+        "meaning": "glasgow haskell compiler"
+    },
+    {
+        "abbr": "abi",
+        "meaning": "application binary interface"
+    },
+    {
+        "abbr": "api",
+        "meaning": "application programming interface"
+    },
+    {
+        "abbr": "jwt",
+        "meaning": "json web token"
+    },
+    {
+        "abbr": "otp",
+        "meaning": "one time pad"
+    },
+    {
+        "abbr": "iot",
+        "meaning": "internet of things"
+    },
+    {
+        "abbr": "msb",
+        "meaning": "most significant bit"
+    },
+    {
+        "abbr": "lsb",
+        "meaning": "least significant bit"
+    },
+    {
+        "abbr": "odt",
+        "meaning": "open document text"
+    },
+    {
+        "abbr": "rsa",
+        "meaning": "rivest, shamir, adleman"
+    },
+    {
+        "abbr": "aes",
+        "meaning": "advanced encryption standard"
+    },
+    {
+        "abbr": "mac",
+        "meaning": "media access control"
+    },
+    {
+        "abbr": "pki",
+        "meaning": "public key infrastructure"
+    },
+    {
+        "abbr": "hid",
+        "meaning": "human interface device"
+    },
+    {
+        "abbr": "stl",
+        "meaning": "standard template library"
+    },
+    {
+        "abbr": "std",
+        "meaning": "standard"
+    },
+    {
+        "abbr": "cpp",
+        "meaning": "c++"
+    },
+    {
+        "abbr": "vfs",
+        "meaning": "virtual file system"
+    },
+    {
+        "abbr": "pmm",
+        "meaning": "physical memory manager"
+    },
+    {
+        "abbr": "arc",
+        "meaning": "atomically reference counted"
+    },
+    {
+        "abbr": "arp",
+        "meaning": "address resolution protocol"
+    },
+    {
+        "abbr": "arg",
+        "meaning": "argument"
+    },
+    {
+        "abbr": "rtt",
+        "meaning": "roundtrip time"
+    },
+    {
+        "abbr": "rtc",
+        "meaning": "real time clock"
+    },
+    {
+        "abbr": "RFC",
+        "meaning": "request for comment"
+    },
+    {
+        "abbr": "ros",
+        "meaning": "robot operating system"
+    },
+    {
+        "abbr": "kvm",
+        "meaning": "kernel virtual machine"
+    },
+    {
+        "abbr": "drm",
+        "meaning": "digital rights management"
+    },
+    {
+        "abbr": "lvm",
+        "meaning": "logical volume management"
+    },
+    {
+        "abbr": "zfs",
+        "meaning": "z file system"
+    },
+    {
+        "abbr": "ext",
+        "meaning": "extended filesystem"
+    },
+    {
+        "abbr": "vnc",
+        "meaning": "virtual network computing"
+    },
+    {
+        "abbr": "rdp",
+        "meaning": "remote desktop protocol"
+    },
+    {
+        "abbr": "pxe",
+        "meaning": "preboot execution environment"
+    },
+    {
+        "abbr": "aws",
+        "meaning": "amazon web services"
+    },
+    {
+        "abbr": "awk",
+        "meaning": "Aho, Weinberger, Kernighan"
+    },
+    {
+        "abbr": "sed",
+        "meaning": "stream editor"
+    },
+    {
+        "abbr": "isp",
+        "meaning": "internet service provider"
+    },
+    {
+        "abbr": "rng",
+        "meaning": "random number generator"
+    },
+    {
+        "abbr": "int",
+        "meaning": "integer"
+    },
+    {
+        "abbr": "str",
+        "meaning": "string"
+    },
+    {
+        "abbr": "ini",
+        "meaning": "initialization"
+    },
+    {
+        "abbr": "afs",
+        "meaning": "Andrew file system"
+    },
+    {
+        "abbr": "hfs",
+        "meaning": "Hierarchical file system"
+    },
+    {
+        "abbr": "hdd",
+        "meaning": "hard disk drive"
+    },
+    {
+        "abbr": "ssd",
+        "meaning": "solid state drive"
+    },
+    {
+        "abbr": "gdb",
+        "meaning": "gnu debugger"
+    },
+    {
+        "abbr": "gas",
+        "meaning": "gnu assembler"
+    },
+    {
+        "abbr": "gif",
+        "meaning": "g image format"
+    },
+    {
+        "abbr": "ttl",
+        "meaning": "time to live"
+    },
+    {
+        "abbr": "gpl",
+        "meaning": "gnu public license"
+    },
+    {
+        "abbr": "gtk",
+        "meaning": "gimp tool kit"
+    },
+    {
+        "abbr": "kib",
+        "meaning": "kibibyte"
+    },
+    {
+        "abbr": "mib",
+        "meaning": "mebibyte"
+    },
+    {
+        "abbr": "gib",
+        "meaning": "gibibyte"
+    },
+    {
+        "abbr": "tib",
+        "meaning": "tibibyte"
+    },
+    {
+        "abbr": "loc",
+        "meaning": "lines of code"
+    },
+    {
+        "abbr": "mvc",
+        "meaning": "model view controller"
+    },
+    {
+        "abbr": "nak",
+        "meaning": "negative acknowledge"
+    },
+    {
+        "abbr": "ack",
+        "meaning": "acknowledge"
+    },
+    {
+        "abbr": "syn",
+        "meaning": "synchronize"
+    },
+    {
+        "abbr": "sys",
+        "meaning": "system"
+    },
+    {
+        "abbr": "pcb",
+        "meaning": "printed circuit board"
+    },
+    {
+        "abbr": "tab",
+        "meaning": "tabulate"
+    },
+    {
+        "abbr": "ctl",
+        "meaning": "control"
+    },
+    {
+        "abbr": "poe",
+        "meaning": "power over ethernet"
+    },
+    {
+        "abbr": "pid",
+        "meaning": "process identifier"
+    },
+    {
+        "abbr": "pic",
+        "meaning": "programmable interrupt controller"
+    },
+    {
+        "abbr": "cas",
+        "meaning": "compare and swap"
+    },
+    {
+        "abbr": "sas",
+        "meaning": "SCSI Attached storage"
+    },
+    {
+        "abbr": "spa",
+        "meaning": "single page app"
+    },
+    {
+        "abbr": "sql",
+        "meaning": "structured query language"
+    },
+    {
+        "abbr": "svg",
+        "meaning": "scalable vector graphics"
+    },
+    {
+        "abbr": "csv",
+        "meaning": "comma separated value"
+    },
+    {
+        "abbr": "vpn",
+        "meaning": "virtual private network"
+    },
+    {
+        "abbr": "xml",
+        "meaning": "extensible markup language"
+    },
+    {
+        "abbr": "tar",
+        "meaning": "tape archive"
+    },
+    {
+        "abbr": "ide",
+        "meaning": "integrated development environment"
+    },
+    {
+        "abbr": "ast",
+        "meaning": "abstract syntax tree"
+    },
+    {
+        "abbr": "isa",
+        "meaning": "instruction set architecture"
+    },
+    {
+        "abbr": "jvm",
+        "meaning": "java virtual machine"
+    },
+    {
+        "abbr": "jar",
+        "meaning": "java archive"
+    },
+    {
+        "abbr": "khz",
+        "meaning": "kilohertz"
+    },
+    {
+        "abbr": "led",
+        "meaning": "light emitting diode"
+    },
+    {
+        "abbr": "mhz",
+        "meaning": "megahertz"
+    },
+    {
+        "abbr": "src",
+        "meaning": "source"
+    },
+    {
+        "abbr": "dst",
+        "meaning": "destination"
+    },
+    {
+        "abbr": "dpi",
+        "meaning": "dots per inch"
+    },
+    {
+        "abbr": "pkg",
+        "meaning": "package"
+    },
+    {
+        "abbr": "mit",
+        "meaning": "Massachusetts Institute of Technology"
+    },
+    {
+        "abbr": "nas",
+        "meaning": "network attached storage"
+    },
+    {
+        "abbr": "San",
+        "meaning": "storage attached network"
+    },
+    {
+        "abbr": "nfs",
+        "meaning": "network file system"
+    },
+    {
+        "abbr": "oom",
+        "meaning": "out of memory"
+    },
+    {
+        "abbr": "oop",
+        "meaning": "object oriented programming"
+    },
+    {
+        "abbr": "orm",
+        "meaning": "object relational mapper"
+    },
+    {
+        "abbr": "mov",
+        "meaning": "move"
+    },
+    {
+        "abbr": "wfi",
+        "meaning": "wait for interrupt"
+    },
+    {
+        "abbr": "pci",
+        "meaning": "peripheral component interconnect"
+    },
+    {
+        "abbr": "ppt",
+        "meaning": "powerpoint"
+    },
+    {
+        "abbr": "pnp",
+        "meaning": "plug and play"
+    },
+    {
+        "abbr": "fpu",
+        "meaning": "floating point unit"
+    },
+    {
+        "abbr": "hcf",
+        "meaning": "halt & catch fire"
+    },
+    {
+        "abbr": "dat",
+        "meaning": "data file"
+    },
+    {
+        "abbr": "lcm",
+        "meaning": "lowest common multiple"
+    },
+    {
+        "abbr": "gcd",
+        "meaning": "greatest common divisor"
+    },
+    {
+        "abbr": "idt",
+        "meaning": "interrupt descriptor table"
+    },
+    {
+        "abbr": "isr",
+        "meaning": "interrupt service routine"
+    },
+    {
+        "abbr": "irq",
+        "meaning": "interrupt request"
+    },
+    {
+        "abbr": "ota",
+        "meaning": "over the air"
+    },
+    {
+        "abbr": "gdt",
+        "meaning": "global descriptor table"
+    },
+    {
+        "abbr": "ldt",
+        "meaning": "local descriptor table"
+    },
+    {
+        "abbr": "vga",
+        "meaning": "virtual graphics array"
+    },
+    {
+        "abbr": "arm",
+        "meaning": "advanced risc machines"
+    }
 ]

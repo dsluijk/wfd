@@ -7,14 +7,14 @@ if (process.env.NODE_ENV === "development") {
 }
 
 import { createContext, FunctionalComponent, h, render } from "preact";
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 import { Board } from "/src/components/board";
 import { Container } from "/src/components/container";
 import { Header } from "/src/components/header";
 import { Keyboard } from "/src/components/keyboard";
 
-import { init, saveState, State } from "/src/logic";
+import { handleInput, init, saveState, State } from "/src/logic";
 
 import "./global.scss";
 
@@ -32,6 +32,29 @@ const Main: FunctionalComponent = () => {
         setState(Object.assign({}, state));
         setTimeout(() => saveState(state), 0);
     };
+
+    useEffect(() => {
+        const listener = (e: KeyboardEvent) => {
+            if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey) return;
+
+            if (e.key === "Enter") {
+                save(handleInput("enter", state));
+                return;
+            }
+
+            if (e.key === "Backspace") {
+                save(handleInput("back", state));
+                return;
+            }
+
+            if ("abcdefghijklmnopqrstuvwxyz".includes(e.key)) {
+                save(handleInput(e.key, state));
+            }
+        };
+
+        document.addEventListener("keyup", listener);
+        return () => document.removeEventListener("keyup", listener);
+    });
 
     return (
         <StateContext.Provider value={[state, save]}>

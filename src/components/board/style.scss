@@ -1,9 +1,9 @@
 .board {
     display: grid;
-    margin: 12% 24%;
+    margin: 8% 24%;
     height: 100%;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 16px;
     grid-row-gap: 16px;
 
@@ -27,6 +27,12 @@
             background: #ffd800;
             border-color: #ffff00;
             color: #1e1900;
+        }
+
+        &[data-result="wrong"] {
+            background: #afafb2;
+            border-color: #000;
+            color: #fafafa;
         }
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "wfd",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Wordle for Developers",
     "repository": "git@github.com:dsluijk/wfd.git",
     "author": "Dany Sluijk <me@dany.dev>",

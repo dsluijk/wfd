@@ -10,7 +10,7 @@ export const Board: FunctionalComponent = () => {
     const [state] = useContext(StateContext);
 
     let items = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 8; i++) {
         const result = getLetterResult(i, state);
 
         for (let j = 0; j < 3; j++) {
