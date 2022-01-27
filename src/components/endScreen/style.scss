@@ -1,0 +1,85 @@
+.header {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 35em;
+    z-index: 1000;
+    background: #ffffffd8;
+
+    h1 {
+        padding-top: 6vh;
+        color: #154c79;
+        font-size: 3em;
+    }
+}
+
+.active {
+    display: flex;
+}
+
+.emoji {
+    margin-top: 4vh;
+    font-size: 8em;
+    animation-name: emojiAnimation;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.share {
+    width: 60%;
+    margin-top: 6vh;
+    padding: 16px 0;
+    background: #154c79;
+    border: 1px solid #000;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 1.2em;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+
+.shared {
+    background: #00cc00;
+    border-color: #00ff00;
+}
+
+@keyframes emojiAnimation {
+    0% {
+        rotate: 0deg;
+    }
+    20% {
+        rotate: 14deg;
+        transform: scale(1.2, 1.2);
+    }
+    30% {
+        rotate: -6deg;
+        transform: scale(1.1, 1.1);
+    }
+    40% {
+        rotate: 8deg;
+    }
+    50% {
+        rotate: -12deg;
+        transform: scale(0.8, 0.8);
+    }
+    65% {
+        rotate: 14deg;
+    }
+    80% {
+        rotate: -20deg;
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        rotate: 0deg;
+    }
+}

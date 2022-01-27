@@ -40,12 +40,10 @@ const handleEnter = (attempt: number, state: State): State => {
 
     state.submitted[attempt] = true;
     if (state.board[attempt] === state.solution.abbr) {
-        alert("congrats!");
         state.streak++;
         state.stats[attempt]++;
         state.state = GameState.Success;
     } else if (attempt + 1 === 8) {
-        alert("too bad :(");
         state.streak = 0;
         state.state = GameState.Failed;
     }
@@ -58,6 +56,38 @@ const handleBackspace = (attempt: number, state: State): State => {
     state.board[attempt] = state.board[attempt].slice(0, -1);
 
     return state;
+};
+
+export const generateSharing = (state: State): string => {
+    const attempts = state.submitted.reduce(
+        (prev, curr) => (curr ? prev + 1 : prev),
+        0,
+    );
+
+    const displayAttempts =
+        state.state === GameState.Success ? attempts.toString() : "x";
+
+    let gameDisplay = "";
+    for (let i = 0; i <= attempts - 1; i++) {
+        if (i !== 0) {
+            gameDisplay += "\n";
+        }
+
+        for (let letter of getLetterResult(i, state)) {
+            if (letter === LetterResult.Correct) {
+                gameDisplay += "🟩";
+            } else if (letter === LetterResult.Place) {
+                gameDisplay += "🟨";
+            } else {
+                gameDisplay += "⬛";
+            }
+        }
+    }
+
+    return `WFD ${state.day} ${displayAttempts}/8
+
+${gameDisplay}
+https://wfd.dany.dev`;
 };
 
 export const getLetterResult = (
@@ -95,7 +125,7 @@ export const getLetterResult = (
 // Reset the state for the next day.
 const newDay = (state: State) => {
     const day = getDay();
-    if (state.day + 1 !== day || state.state !== GameState.Success) {
+    if (state.day + 1 < day || state.state !== GameState.Success) {
         state.streak = 0;
     }
 

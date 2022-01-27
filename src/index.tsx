@@ -13,6 +13,7 @@ import { Board } from "/src/components/board";
 import { Container } from "/src/components/container";
 import { Header } from "/src/components/header";
 import { Keyboard } from "/src/components/keyboard";
+import { EndScreen } from "/src/components/endScreen";
 
 import { handleInput, init, saveState, State } from "/src/logic";
 
@@ -62,6 +63,7 @@ const Main: FunctionalComponent = () => {
                 <Header />
                 <Board />
                 <Keyboard />
+                <EndScreen />
             </Container>
         </StateContext.Provider>
     );
